@@ -1,0 +1,1534 @@
+<!doctype html>
+<html class="scroll-smooth" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#c3c6d3",
+              "inverse-primary": "#aec6ff",
+              "text-on-light": "#1f1d1e",
+              "on-primary-container": "#88aeff",
+              "text-on-dark": "#d9c5b2",
+              "error-container": "#ffdad6",
+              "text-inverse": "#ffffff",
+              "canvas-dark": "#2e3934",
+              "on-primary-fixed-variant": "#13448f",
+              "secondary-fixed": "#d9e5de",
+              "secondary-fixed-dim": "#bdc9c2",
+              "surface-container-high": "#ede7e8",
+              "on-error": "#ffffff",
+              "surface-tint": "#335ca8",
+              "tertiary-container": "#8b0002",
+              "french-blue": "#0a3f8a",
+              "charcoal-brown": "#2e3934",
+              "on-secondary-container": "#56625c",
+              "primary-fixed": "#d8e2ff",
+              "on-secondary-fixed": "#131e19",
+              "surface-container": "#f2eced",
+              "primary-container": "#0a3f8a",
+              "tertiary-fixed": "#ffdad5",
+              "on-secondary": "#ffffff",
+              "canvas-light": "#d9c5b2",
+              "surface-container-highest": "#e7e1e2",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#3e4944",
+              "inverse-on-surface": "#f5eff0",
+              inferno: "#a40606",
+              "carbon-black": "#1f1d1e",
+              "on-primary-fixed": "#001a43",
+              "tertiary-fixed-dim": "#ffb4a9",
+              background: "#fef8f9",
+              outline: "#737782",
+              "on-surface": "#1d1b1c",
+              "surface-dim": "#ded9da",
+              "inverse-surface": "#323031",
+              "on-background": "#1d1b1c",
+              "surface-bright": "#fef8f9",
+              "on-primary": "#ffffff",
+              primary: "#002963",
+              "surface-container-low": "#f8f2f3",
+              "on-tertiary-fixed-variant": "#930003",
+              "surface-variant": "#e7e1e2",
+              tertiary: "#610001",
+              error: "#ba1a1a",
+              "secondary-container": "#d1ddd6",
+              "on-tertiary-fixed": "#410000",
+              surface: "#fef8f9",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#aec6ff",
+              "on-tertiary-container": "#ff9081",
+              secondary: "#55615b",
+              "on-surface-variant": "#434751",
+              "on-tertiary": "#ffffff",
+              "pale-oak": "#d9c5b2",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "margin-tablet": "2.5rem",
+              "space-sm": "0.5rem",
+              "space-xl": "2.5rem",
+              "space-xs": "0.25rem",
+              "margin-desktop": "4rem",
+              gutter: "1.5rem",
+              "space-2xl": "4rem",
+              "space-lg": "1.5rem",
+              "gutter-desktop": "2rem",
+              "space-3xl": "6rem",
+              "space-md": "1rem",
+              margin: "1.25rem",
+            },
+            fontFamily: {
+              "body-md": ["Montserrat"],
+              "display-hero-mobile": ["Merriweather"],
+              "label-lg": ["Montserrat"],
+              subheading: ["Montserrat"],
+              "body-lg": ["Montserrat"],
+              "headline-lg-mobile": ["Merriweather"],
+              "headline-lg": ["Merriweather"],
+              "body-sm": ["Montserrat"],
+              "headline-sm": ["Merriweather"],
+              "headline-md": ["Merriweather"],
+              "display-hero": ["Merriweather"],
+              "label-sm": ["Montserrat"],
+            },
+            fontSize: {
+              "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+              "display-hero-mobile": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "600",
+                },
+              ],
+              subheading: [
+                "18px",
+                {
+                  lineHeight: "26px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg": [
+                "40px",
+                {
+                  lineHeight: "50px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+              "headline-sm": [
+                "22px",
+                { lineHeight: "30px", fontWeight: "400" },
+              ],
+              "headline-md": [
+                "28px",
+                { lineHeight: "38px", fontWeight: "400" },
+              ],
+              "display-hero": [
+                "56px",
+                {
+                  lineHeight: "68px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.08em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-pale-oak font-body-md text-carbon-black antialiased">
+    <header
+      class="fixed top-0 left-0 right-0 w-full z-50 bg-pale-oak/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(31,29,30,0.06)]"
+    >
+      <div
+        class="h-20 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between"
+      >
+        <a
+          class="flex items-center gap-space-sm group focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 focus-visible:ring-offset-pale-oak rounded-lg py-space-xs px-space-xs"
+          href="#hero"
+          ><div
+            aria-hidden="true"
+            class="w-9 h-9 rounded-lg bg-carbon-black text-pale-oak flex items-center justify-center font-headline-sm text-headline-sm font-bold select-none group-hover:bg-french-blue transition-colors duration-200"
+          >
+            EL
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-headline-sm text-headline-sm text-carbon-black font-bold tracking-tight leading-none group-hover:text-french-blue transition-colors duration-200"
+              >Ezequiel Lavaca</span
+            ><span
+              class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mt-0.5"
+              >Diseñador UI &amp; Desarrollador</span
+            >
+          </div></a
+        >
+        <div class="group">
+          <button
+            id="menutrigger"
+            type="button"
+            class="peer md:hidden transition-colors text-pale-oak bg-charcoal-brown flex items-center p-2"
+            aria-controls="nav"
+            aria-expanded="false"
+          >
+            <span
+              aria-hidden="true"
+              class="material-symbols-outlined text-[20px] pointer-events-none"
+              >menu</span
+            >
+            <span class="sr-only">Menú</span>
+          </button>
+          <nav
+            class="hidden peer-aria-expanded:flex peer-aria-expanded:flex-col peer-aria-expanded:absolute peer-aria-expanded:right-0 peer-aria-expanded:-bottom-48 md:static md:flex md:flex-row md:peer-aria-expanded:flex-row gap-space-lg peer-aria-expanded:w-full peer-aria-expanded:bg-pale-oak peer-aria-expanded:p-2"
+            id="nav"
+          >
+            <ul class="flex flex-col gap-space-lg md:flex-row">
+              <li>
+                <a
+                  aria-current="page"
+                  class="transition-colors py-space-xs px-space-xs rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 focus-visible:ring-offset-pale-oak text-french-blue underline decoration-2 underline-offset-8 decoration-french-blue font-semibold"
+                  data-path="portfolio-one-page"
+                  href="#hero"
+                  >Inicio</a
+                >
+              </li>
+              <li>
+                <a
+                  class="font-label-lg text-label-lg text-on-surface-variant hover:text-carbon-black transition-colors py-space-xs px-space-xs rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 focus-visible:ring-offset-pale-oak"
+                  data-path="servicios"
+                  href="#servicios"
+                  >Servicios</a
+                >
+              </li>
+              <li>
+                <a
+                  class="font-label-lg text-label-lg text-on-surface-variant hover:text-carbon-black transition-colors py-space-xs px-space-xs rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 focus-visible:ring-offset-pale-oak"
+                  data-path="portfolio"
+                  href="#portfolio"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  class="font-label-lg text-label-lg text-on-surface-variant hover:text-carbon-black transition-colors py-space-xs px-space-xs rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 focus-visible:ring-offset-pale-oak"
+                  data-path="contacto"
+                  href="#contacto"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <a
+            class="hidden sm:inline-flex items-center font-label-lg text-label-lg px-space-lg py-3 rounded-lg bg-french-blue text-on-primary hover:bg-primary transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 focus-visible:ring-offset-pale-oak"
+            href="#contacto"
+            >Iniciar Proyecto</a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-20 bg-pale-oak min-h-screen">
+      <div class="flex flex-col w-full">
+        <!-- Accent top bar: Inferno subtle decorative rule -->
+        <div class="w-full h-1 bg-inferno"></div>
+        <!-- HERO SECTION (#hero) -->
+        <section
+          class="relative w-full max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop pt-space-xl pb-space-3xl overflow-hidden"
+          id="hero"
+        >
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center"
+          >
+            <!-- Left Column: Copy & Core Actions -->
+            <div class="lg:col-span-8 flex flex-col gap-space-md">
+              <!-- Availability Badge -->
+              <div
+                class="inline-flex items-center gap-space-xs self-start px-3 py-1 rounded-full bg-carbon-black/5"
+              >
+                <span
+                  class="inline-block w-2.5 h-2.5 rounded-full bg-inferno animate-pulse"
+                ></span>
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-carbon-black font-semibold"
+                  >Disponible para Proyectos · 2025</span
+                >
+              </div>
+              <h1
+                class="font-display-hero text-display-hero text-carbon-black tracking-tight leading-tight"
+              >
+                Diseño Web, Maquetación y Aplicaciones a Medida.
+              </h1>
+              <p
+                class="font-subheading text-subheading text-carbon-black/90 font-medium"
+              >
+                Ezequiel Lavaca — Desarrollador Frontend &amp; Arquitecto de
+                Interfaces.
+              </p>
+              <p
+                class="font-body-lg text-body-lg text-carbon-black/80 max-w-2xl leading-relaxed"
+              >
+                Diseño e implemento plataformas web rápidas, escalables y
+                visualmente memorables. Mi enfoque une la precisión del diseño
+                editorial con arquitectura semántica estricta, rendimiento
+                máximo y accesibilidad universal (WCAG AA).
+              </p>
+              <!-- Tech Stack Chips -->
+              <div
+                aria-label="Especializaciones técnicas principales"
+                class="flex flex-wrap items-center gap-space-xs pt-space-xs"
+              >
+                <span
+                  class="font-label-sm text-label-sm px-3 py-1 rounded-full bg-carbon-black/10 text-carbon-black font-semibold"
+                  >React</span
+                >
+                <span
+                  class="font-label-sm text-label-sm px-3 py-1 rounded-full bg-carbon-black/10 text-carbon-black font-semibold"
+                  >Next.js</span
+                >
+                <span
+                  class="font-label-sm text-label-sm px-3 py-1 rounded-full bg-carbon-black/10 text-carbon-black font-semibold"
+                  >Vue 3</span
+                >
+                <span
+                  class="font-label-sm text-label-sm px-3 py-1 rounded-full bg-carbon-black/10 text-carbon-black font-semibold"
+                  >Node.js</span
+                >
+                <span
+                  class="font-label-sm text-label-sm px-3 py-1 rounded-full bg-carbon-black/10 text-carbon-black font-semibold"
+                  >MongoDB</span
+                >
+                <span
+                  class="font-label-sm text-label-sm px-3 py-1 rounded-full bg-inferno/10 text-inferno font-bold"
+                  >Sistemas de Diseño</span
+                >
+                <span
+                  class="font-label-sm text-label-sm px-3 py-1 rounded-full bg-carbon-black/10 text-carbon-black font-semibold"
+                  >WordPress</span
+                >
+              </div>
+              <!-- Hero CTAs -->
+              <div class="flex flex-wrap items-center gap-space-lg pt-space-md">
+                <a
+                  class="inline-flex items-center justify-center font-label-lg text-label-lg px-space-lg py-3 rounded-lg bg-french-blue text-on-primary font-semibold hover:bg-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 focus-visible:ring-offset-pale-oak shadow-sm"
+                  href="#portfolio"
+                >
+                  Explorar proyectos
+                  <span class="material-symbols-outlined ml-2 text-[20px]"
+                    >arrow_downward</span
+                  >
+                </a>
+                <a
+                  class="font-label-lg text-label-lg text-french-blue underline decoration-french-blue decoration-2 underline-offset-4 hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 focus-visible:ring-offset-pale-oak py-1"
+                  href="#contacto"
+                >
+                  Hablemos de tu idea →
+                </a>
+              </div>
+            </div>
+            <!-- Right Column: Visual Accent & Architecture Diagram Card -->
+            <div
+              class="lg:col-span-4 flex flex-col gap-space-md mt-space-lg lg:mt-0"
+            >
+              <div
+                class="bg-surface-container-highest/60 rounded-xl p-space-lg shadow-sm backdrop-blur-sm relative overflow-hidden"
+              >
+                <div class="flex items-center justify-between pb-space-sm">
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-widest text-carbon-black/70"
+                    >Métricas de Entrega</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-french-blue text-[22px]"
+                    >verified</span
+                  >
+                </div>
+                <!-- Code / Spec Preview Graphic -->
+                <div class="space-y-3 py-space-xs font-body-sm text-body-sm">
+                  <div class="flex items-center justify-between">
+                    <span class="text-carbon-black/80 font-medium"
+                      >Lighthouse Performance</span
+                    >
+                    <span class="font-semibold text-french-blue"
+                      >100 / 100</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-carbon-black/10 h-1.5 rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="bg-french-blue h-full w-full rounded-full"
+                    ></div>
+                  </div>
+                  <div class="flex items-center justify-between pt-2">
+                    <span class="text-carbon-black/80 font-medium"
+                      >Accesibilidad (WCAG AA)</span
+                    >
+                    <span class="font-semibold text-french-blue"
+                      >Cumplimiento 100%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-carbon-black/10 h-1.5 rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="bg-french-blue h-full w-[98%] rounded-full"
+                    ></div>
+                  </div>
+                  <div class="flex items-center justify-between pt-2">
+                    <span class="text-carbon-black/80 font-medium"
+                      >Arquitectura de Tokens</span
+                    >
+                    <span class="font-semibold text-inferno"
+                      >Tokens V2 Activos</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-carbon-black/10 h-1.5 rounded-full overflow-hidden"
+                  >
+                    <div class="bg-inferno h-full w-[95%] rounded-full"></div>
+                  </div>
+                </div>
+                <div
+                  class="mt-space-md pt-space-sm text-carbon-black/70 font-body-sm text-body-sm flex items-center gap-space-xs"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px] text-french-blue"
+                    >terminal</span
+                  >
+                  <span class=""
+                    >Código estructurado, tipado estricto &amp; cero
+                    redundancia.</span
+                  >
+                </div>
+              </div>
+              <!-- Featured Portrait / Workspace Accent Image -->
+              <div
+                class="rounded-xl overflow-hidden shadow-sm relative h-48 bg-carbon-black/10"
+              >
+                <img
+                  class="w-full h-full object-cover"
+                  data-alt="Minimalist design desk workspace of Ezequiel Lavaca with architectural sketch books, a high-resolution code monitor showing dark theme code, warm ambient lighting with pale oak undertones, tactile notebook, professional European studio environment, 35mm crisp photography"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpBHvgLCum-mjgcKUvbXJlAC7_42likSIimbkV0wg4LHFwLLUr3hDh6jZafCdUBbb-8Rovu4lC0N7UTvgVanlujbqxBbRpV0KuGextzV6NZnr5aS6SiTuv5YEY-B8P_vxaaOzvX-z2zurgXSdqQkSlqIgQuhttA4ctu4sArXPwJU16Fsc945tEq946Ri-rr9DvlFtGfdpMecs0bOhSrr_uSy0KSSxTcVnIcY7zOG7PPD3aR5F8PGY"
+                />
+                <div
+                  class="absolute bottom-2 left-3 px-2 py-1 bg-carbon-black/80 backdrop-blur-md rounded text-pale-oak font-label-sm text-label-sm"
+                >
+                  Estudio · Buenos Aires
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SERVICIOS / ESPECIALIDADES (#servicios) -->
+        <section
+          class="w-full py-space-3xl max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"
+          id="servicios"
+        >
+          <div class="flex flex-col gap-space-xs pb-space-xl">
+            <div
+              class="flex items-center gap-space-xs text-inferno font-label-sm text-label-sm uppercase tracking-widest font-bold"
+            >
+              <span class="">01</span>
+              <span class="w-8 h-0.5 bg-inferno"></span>
+              <span class="">Especialidades Técnicas</span>
+            </div>
+            <h2
+              class="font-headline-lg text-headline-lg text-carbon-black tracking-tight"
+            >
+              Servicios de Diseño &amp; Ingeniería Web
+            </h2>
+            <p class="font-body-lg text-body-lg text-carbon-black/80 max-w-2xl">
+              Soluciones integrales diseñadas para compañías y productos que no
+              transigen entre elegancia gráfica y solidez de código.
+            </p>
+          </div>
+          <!-- 3 Cards Layout -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+            <!-- Service 1: Design Systems -->
+            <div
+              class="bg-surface-container-high/40 rounded-xl p-space-xl flex flex-col justify-between shadow-sm transition-transform duration-200 hover:-translate-y-1"
+            >
+              <div class="flex flex-col gap-space-md">
+                <div
+                  class="w-12 h-12 rounded-lg bg-carbon-black text-pale-oak flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >grid_view</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm text-carbon-black font-bold"
+                >
+                  Diseño Web &amp; Design Systems
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-carbon-black/80 leading-relaxed"
+                >
+                  Traducción sin fricciones de Figma a código vivo.
+                  Estructuración de design tokens, guías de estilo
+                  sistematizadas, componentes reutilizables y aseguramiento de
+                  contraste WCAG AA desde el primer boceto.
+                </p>
+              </div>
+              <div
+                class="pt-space-lg flex flex-wrap gap-1.5 font-label-sm text-label-sm text-carbon-black/75"
+              >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >Tokens Semánticos</span
+                >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >Figma a React</span
+                >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >Accesibilidad</span
+                >
+              </div>
+            </div>
+            <!-- Service 2: Frontend & UI -->
+            <div
+              class="bg-surface-container-high/40 rounded-xl p-space-xl flex flex-col justify-between shadow-sm transition-transform duration-200 hover:-translate-y-1"
+            >
+              <div class="flex flex-col gap-space-md">
+                <div
+                  class="w-12 h-12 rounded-lg bg-french-blue text-on-primary flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >code</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm text-carbon-black font-bold"
+                >
+                  Maquetación Frontend &amp; UI
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-carbon-black/80 leading-relaxed"
+                >
+                  Desarrollo semántico en HTML5 y CSS moderno impulsado por
+                  Tailwind CSS. Transiciones y micro-interacciones fluidas a
+                  60fps sin sobrecargar el bundle de Javascript ni penalizar el
+                  First Input Delay.
+                </p>
+              </div>
+              <div
+                class="pt-space-lg flex flex-wrap gap-1.5 font-label-sm text-label-sm text-carbon-black/75"
+              >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >HTML5 Semántico</span
+                >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >Tailwind CSS</span
+                >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >Responsive 12-col</span
+                >
+              </div>
+            </div>
+            <!-- Service 3: Full-Stack Apps -->
+            <div
+              class="bg-surface-container-high/40 rounded-xl p-space-xl flex flex-col justify-between shadow-sm transition-transform duration-200 hover:-translate-y-1"
+            >
+              <div class="flex flex-col gap-space-md">
+                <div
+                  class="w-12 h-12 rounded-lg bg-carbon-black text-pale-oak flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >dataset</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm text-carbon-black font-bold"
+                >
+                  Aplicaciones Full-Stack
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-carbon-black/80 leading-relaxed"
+                >
+                  Construcción de arquitecturas completas con Next.js, React,
+                  Vue 3, WordPress (Headless / CMS tradicional), Node.js y bases
+                  de datos MongoDB. APIs robustas, integración con servicios
+                  externos y renderizado híbrido de alto rendimiento.
+                </p>
+              </div>
+              <div
+                class="pt-space-lg flex flex-wrap gap-1.5 font-label-sm text-label-sm text-carbon-black/75"
+              >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >Next.js App Router</span
+                >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >Node &amp; Express</span
+                >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >MongoDB Atlas</span
+                >
+                <span class="px-2.5 py-1 bg-carbon-black/5 rounded"
+                  >WordPress / Headless WP</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- PORTFOLIO / PROYECTOS DE CLIENTES (#portfolio) -->
+        <!-- Strict Full Charcoal Brown Section with Pale Oak Text -->
+        <section
+          class="w-full bg-charcoal-brown text-pale-oak py-space-3xl"
+          id="portfolio"
+        >
+          <div
+            class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"
+          >
+            <!-- Section Header -->
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between pb-space-2xl gap-space-md"
+            >
+              <div class="flex flex-col gap-space-xs">
+                <div
+                  class="flex items-center gap-space-xs text-inferno font-label-sm text-label-sm uppercase tracking-widest font-bold"
+                >
+                  <span class="text-pale-oak">02</span>
+                  <span class="w-8 h-0.5 bg-inferno"></span>
+                  <span class="text-pale-oak">Casos de Estudio</span>
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-pale-oak tracking-tight"
+                >
+                  Proyectos Seleccionados
+                </h2>
+                <p class="font-body-lg text-body-lg text-pale-oak/80 max-w-xl">
+                  Soluciones reales en producción para finanzas, arquitectura
+                  editorial, tecnología sanitaria y sistemas de diseño
+                  institucional.
+                </p>
+              </div>
+              <div class="text-pale-oak/70 font-label-sm text-label-sm">
+                <span class=""
+                  >Ámbito: Producción &amp; Arquitectura Frontend</span
+                >
+              </div>
+            </div>
+            <!-- 4 Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+              <!-- Proyecto 1: Plataforma SaaS Financiera -->
+              <article
+                class="bg-carbon-black/40 rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:bg-carbon-black/60 transition-colors"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <!-- Project Image -->
+                  <div
+                    class="w-full h-56 rounded-lg overflow-hidden relative bg-carbon-black/60"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      data-alt="Modern dark mode fintech SaaS web application dashboard interface showing candlestick financial charts, clean typography, transaction telemetry and balanced data visualization in slate grey and subtle blue accents"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGKwWErh5t__rkLgCMzcb3sInU5MJIYNify-bWA4pSqaocj2Ydf6Y975pK7i0usEsQwTisub3BiLjs251e-7rLdL5AgRWmli1iOXeh2Z_YtLY5BHpweZ9n7PD0JrNOfMMfZLc71jdTMRO5tMLplNamDAdM8kKJi50FP2NHJnWEB4vb8t0vN08rWwoB510KWrj-PNE4USTFAE_caeFeV2oBh3uy7CSgTExHPvMYpHppUrBYJ-tMRQA"
+                    />
+                    <span
+                      class="absolute top-3 right-3 px-2.5 py-1 bg-charcoal-brown/90 text-pale-oak rounded text-label-sm font-semibold"
+                      >2024 · FinTech</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <h3
+                      class="font-headline-sm text-headline-sm text-pale-oak font-bold"
+                    >
+                      Plataforma SaaS Financiera · ValoraIQ
+                    </h3>
+                    <p
+                      class="font-label-sm text-label-sm text-pale-oak/70 font-medium"
+                    >
+                      Rol: Diseñador UI Principal &amp; Desarrollador Full-Stack
+                    </p>
+                    <p
+                      class="font-body-md text-body-md text-pale-oak/85 leading-relaxed pt-1"
+                    >
+                      Arquitectura de portal SaaS para proyecciones de inversión
+                      institucional. Implementación de sistema de tokens
+                      dinámicos, flujos transaccionales seguros y consultas en
+                      tiempo real optimizadas en MongoDB.
+                    </p>
+                  </div>
+                  <!-- Tech Badges -->
+                  <div
+                    aria-label="Tecnologías de ValoraIQ"
+                    class="flex flex-wrap gap-1.5 pt-space-xs"
+                  >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Next.js 14</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Node.js</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >MongoDB</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Design Tokens</span
+                    >
+                  </div>
+                </div>
+                <!-- Actions & Impact -->
+                <div class="pt-space-lg flex items-center justify-between">
+                  <span class="font-body-sm text-body-sm text-pale-oak/70"
+                    >+45% velocidad en cargas interactivas</span
+                  >
+                  <div class="flex items-center gap-space-md">
+                    <a
+                      class="font-label-lg text-label-lg text-pale-oak underline underline-offset-4 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded"
+                      href="#contacto"
+                    >
+                      Ver demo en vivo
+                    </a>
+                    <a
+                      class="font-label-lg text-label-lg text-pale-oak/80 underline underline-offset-4 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded"
+                      href="#contacto"
+                    >
+                      Repositorio
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- Proyecto 2: E-Commerce de Arquitectura y Mobiliario -->
+              <article
+                class="bg-carbon-black/40 rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:bg-carbon-black/60 transition-colors"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <!-- Project Image -->
+                  <div
+                    class="w-full h-56 rounded-lg overflow-hidden relative bg-carbon-black/60"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      data-alt="Elegant Scandinavian modern architecture and high-end handcrafted wooden furniture design online catalog layout, pristine clean grid, minimal editorial magazine aesthetic, warm natural wood textures on pale background"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvf7rOngw0MTwPVZ7eDKot8_J3DgljIWp3pzBAJEfdwd4IkqDCDoMKO8amycr4mLiddTYtO_VBI9zTAHfhAlmb8U8X0EcQw9U-mLuv_OwBbH0vsl8JiPtYVizgXSL_goWQnb3vEFabfb_VKHmKUTLsyDYpbNwFonTLN5ELtjECudtOW_n5_Wn9-N-Q6scZd6c7exxjS8ioKoVZZyPvo1RfGol8NQEkUCCa9L0QXs1JJpXIEtPUU-A"
+                    />
+                    <span
+                      class="absolute top-3 right-3 px-2.5 py-1 bg-charcoal-brown/90 text-pale-oak rounded text-label-sm font-semibold"
+                      >2024 · E-Commerce</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <h3
+                      class="font-headline-sm text-headline-sm text-pale-oak font-bold"
+                    >
+                      Mobiliario Nórdico &amp; Arquitectura · Atelier V
+                    </h3>
+                    <p
+                      class="font-label-sm text-label-sm text-pale-oak/70 font-medium"
+                    >
+                      Rol: Maquetador Frontend &amp; Diseñador de Interacciones
+                    </p>
+                    <p
+                      class="font-body-md text-body-md text-pale-oak/85 leading-relaxed pt-1"
+                    >
+                      Catálogo inmersivo con filtros facetados instantáneos,
+                      galerías con zoom de alta resolución y micro-interacciones
+                      de añadido al carrito sin recargas con Vue 3 y Tailwind
+                      CSS.
+                    </p>
+                  </div>
+                  <!-- Tech Badges -->
+                  <div
+                    aria-label="Tecnologías de Atelier V"
+                    class="flex flex-wrap gap-1.5 pt-space-xs"
+                  >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Vue 3</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Tailwind CSS</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Pinia</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Web Animations</span
+                    >
+                  </div>
+                </div>
+                <!-- Actions & Impact -->
+                <div class="pt-space-lg flex items-center justify-between">
+                  <span class="font-body-sm text-body-sm text-pale-oak/70"
+                    >Conversion rate +32%</span
+                  >
+                  <div class="flex items-center gap-space-md">
+                    <a
+                      class="font-label-lg text-label-lg text-pale-oak underline underline-offset-4 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded"
+                      href="#contacto"
+                    >
+                      Ver demo en vivo
+                    </a>
+                    <a
+                      class="font-label-lg text-label-lg text-pale-oak/80 underline underline-offset-4 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded"
+                      href="#contacto"
+                    >
+                      Repositorio
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- Proyecto 3: Dashboard de Analítica Médica -->
+              <article
+                class="bg-carbon-black/40 rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:bg-carbon-black/60 transition-colors"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <!-- Project Image -->
+                  <div
+                    class="w-full h-56 rounded-lg overflow-hidden relative bg-carbon-black/60"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      data-alt="Medical healthcare telemetry analytics interface dashboard displaying clinical patient metrics, ECG rhythms, accessible high contrast data visualization, clinical data tables and status chips"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJGqQsUp17Q5OueBuOZ68YPsHSAq3Ujs4ef6aXmNDbm2Kx35Qxxf38Kr9Eu-yGXAQKGnJPPufnx-RLdRrJqzyxner3Y5fJYor7RCpbuvcsfWs7qYn--M1ktRoGRhtqMqPWvw1V7lIlalm-rSX3NwrpNqkC4zhrSmmNs-cedU0h6Nch0NQf-azMehXdfHyu-g5dvaTU1LANRprm0Ub7C7LnXV1ZfYBiea7116CLrxQfeq40wd8WdF0"
+                    />
+                    <span
+                      class="absolute top-3 right-3 px-2.5 py-1 bg-charcoal-brown/90 text-pale-oak rounded text-label-sm font-semibold"
+                      >2023 · HealthTech</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <h3
+                      class="font-headline-sm text-headline-sm text-pale-oak font-bold"
+                    >
+                      Dashboard de Analítica Médica · Synapse Health
+                    </h3>
+                    <p
+                      class="font-label-sm text-label-sm text-pale-oak/70 font-medium"
+                    >
+                      Rol: Especialista en Accesibilidad &amp; Frontend React
+                    </p>
+                    <p
+                      class="font-body-md text-body-md text-pale-oak/85 leading-relaxed pt-1"
+                    >
+                      Visualización crítica de parámetros biométricos con
+                      navegación por teclado íntegra, lectores de pantalla
+                      certificados bajo WCAG AA y controles reactivos en
+                      TypeScript.
+                    </p>
+                  </div>
+                  <!-- Tech Badges -->
+                  <div
+                    aria-label="Tecnologías de Synapse Health"
+                    class="flex flex-wrap gap-1.5 pt-space-xs"
+                  >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >React</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >TypeScript</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >D3.js Charts</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >WCAG 2.1 AA</span
+                    >
+                  </div>
+                </div>
+                <!-- Actions & Impact -->
+                <div class="pt-space-lg flex items-center justify-between">
+                  <span class="font-body-sm text-body-sm text-pale-oak/70"
+                    >100% auditable por teclado</span
+                  >
+                  <div class="flex items-center gap-space-md">
+                    <a
+                      class="font-label-lg text-label-lg text-pale-oak underline underline-offset-4 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded"
+                      href="#contacto"
+                    >
+                      Ver demo en vivo
+                    </a>
+                    <a
+                      class="font-label-lg text-label-lg text-pale-oak/80 underline underline-offset-4 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded"
+                      href="#contacto"
+                    >
+                      Repositorio
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- Proyecto 4: Sistema de Diseño Institucional & Portal Web -->
+              <article
+                class="bg-carbon-black/40 rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:bg-carbon-black/60 transition-colors"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <!-- Project Image -->
+                  <div
+                    class="w-full h-56 rounded-lg overflow-hidden relative bg-carbon-black/60"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      data-alt="Design system documentation living library showcase on desktop monitor, modular UI components, typography scales, buttons and inputs matrix, Storybook preview panels with precise measurements"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrCl7VNy2C3BAmGqJw41IA-8XTL6H8VqtGkIMET2gbAZoCsmAPwz1EabfVHStGWrPoCnQaC1W12gkcRaVXow5pXOem0DtxsHIr-GLOCuS-87MZemQIGuMagjVxe4vB8fUzWBvPlb4GGG93laLBihsV9gTiTyvNESq2YesDftG7kjdmcFulI62fJgnKAh7szJ2z6M_0RsoHL7HRoNE8nR_vq-7tTZ_8z3QCOXQtqX_u0ASEbxhgAh0"
+                    />
+                    <span
+                      class="absolute top-3 right-3 px-2.5 py-1 bg-charcoal-brown/90 text-pale-oak rounded text-label-sm font-semibold"
+                      >2023 · Design System</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <h3
+                      class="font-headline-sm text-headline-sm text-pale-oak font-bold"
+                    >
+                      Sistema de Diseño Institucional · Atlas UI
+                    </h3>
+                    <p
+                      class="font-label-sm text-label-sm text-pale-oak/70 font-medium"
+                    >
+                      Rol: Lead Design Technologist &amp; Autor de Librería
+                    </p>
+                    <p
+                      class="font-body-md text-body-md text-pale-oak/85 leading-relaxed pt-1"
+                    >
+                      Librería unificada de más de 45 componentes empaquetados
+                      en NPM, documentados mediante Storybook y consumidos por
+                      múltiples equipos para garantizar coherencia visual y
+                      celeridad de release.
+                    </p>
+                  </div>
+                  <!-- Tech Badges -->
+                  <div
+                    aria-label="Tecnologías de Atlas UI"
+                    class="flex flex-wrap gap-1.5 pt-space-xs"
+                  >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Next.js</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Storybook 8</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >Turborepo</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-pale-oak/10 text-pale-oak font-label-sm text-label-sm"
+                      >npm Package</span
+                    >
+                  </div>
+                </div>
+                <!-- Actions & Impact -->
+                <div class="pt-space-lg flex items-center justify-between">
+                  <span class="font-body-sm text-body-sm text-pale-oak/70"
+                    >-60% tiempo de maquetado</span
+                  >
+                  <div class="flex items-center gap-space-md">
+                    <a
+                      class="font-label-lg text-label-lg text-pale-oak underline underline-offset-4 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded"
+                      href="#contacto"
+                    >
+                      Ver demo en vivo
+                    </a>
+                    <a
+                      class="font-label-lg text-label-lg text-pale-oak/80 underline underline-offset-4 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded"
+                      href="#contacto"
+                    >
+                      Repositorio
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <!-- CONTACTO & COTIZACIÓN (#contacto) -->
+        <!-- Pale Oak background with Carbon Black text -->
+        <section
+          class="w-full py-space-3xl max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"
+          id="contacto"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop">
+            <!-- Left Column: Contact details & Direct channels -->
+            <div
+              class="lg:col-span-5 flex flex-col justify-between gap-space-xl"
+            >
+              <div class="flex flex-col gap-space-sm">
+                <div
+                  class="flex items-center gap-space-xs text-inferno font-label-sm text-label-sm uppercase tracking-widest font-bold"
+                >
+                  <span class="">03</span>
+                  <span class="w-8 h-0.5 bg-inferno"></span>
+                  <span class="">Conversemos</span>
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-carbon-black tracking-tight"
+                >
+                  ¿Tenés un proyecto en mente?
+                </h2>
+                <p
+                  class="font-body-lg text-body-lg text-carbon-black/80 leading-relaxed pt-space-xs"
+                >
+                  Desde la creación de un nuevo portal web hasta la
+                  refactorización arquitectónica de tu frontend. Analicemos
+                  requerimientos, tiempos y presupuestos.
+                </p>
+                <div class="pt-space-md flex flex-col gap-space-md">
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm text-carbon-black/60 uppercase tracking-wider block mb-1"
+                      >Correo Electrónico Directo</span
+                    >
+                    <a
+                      class="font-subheading text-subheading text-french-blue underline decoration-french-blue decoration-2 underline-offset-4 hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
+                      href="mailto:ezequiel@lavaca.dev"
+                    >
+                      ezequiel@lavaca.dev
+                    </a>
+                  </div>
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm text-carbon-black/60 uppercase tracking-wider block mb-1"
+                      >Ubicación &amp; Disponibilidad</span
+                    >
+                    <p class="font-body-md text-body-md text-carbon-black">
+                      Buenos Aires, Argentina (GMT-3) · Trabajo Remoto Global
+                    </p>
+                  </div>
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm text-carbon-black/60 uppercase tracking-wider block mb-1"
+                      >Redes Profesionales</span
+                    >
+                    <div class="flex items-center gap-space-md pt-1">
+                      <a
+                        class="font-body-md text-body-md text-french-blue underline decoration-french-blue underline-offset-4 hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
+                        href="https://linkedin.com"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        LinkedIn ↗
+                      </a>
+                      <a
+                        class="font-body-md text-body-md text-french-blue underline decoration-french-blue underline-offset-4 hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
+                        href="https://github.com"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        GitHub ↗
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-space-md bg-surface-container-high/50 rounded-lg flex items-center gap-space-sm text-carbon-black/80 font-body-sm text-body-sm"
+              >
+                <span
+                  class="material-symbols-outlined text-french-blue text-[20px]"
+                  >schedule</span
+                >
+                <span class=""
+                  >Respuesta típica en menos de 24 horas hábiles.</span
+                >
+              </div>
+            </div>
+            <!-- Right Column: Accessible Contact Form -->
+            <div class="lg:col-span-7">
+              <div
+                class="bg-surface-container-high/30 rounded-xl p-space-xl shadow-sm"
+              >
+                <form
+                  class="flex flex-col gap-space-md"
+                  id="contact-form"
+                  novalidate=""
+                >
+                  <!-- Global Feedback Notification Banner -->
+                  <div
+                    aria-live="polite"
+                    class="hidden p-space-sm rounded-lg font-body-sm text-body-sm"
+                    id="form-alert"
+                    role="alert"
+                  ></div>
+                  <!-- Field: Name -->
+                  <div class="flex flex-col gap-1.5">
+                    <label
+                      class="font-label-lg text-label-lg text-carbon-black font-semibold flex items-center justify-between"
+                      for="contact-name"
+                    >
+                      <span class=""
+                        >Nombre Completo
+                        <span aria-hidden="true" class="text-inferno font-bold"
+                          >*</span
+                        ></span
+                      >
+                    </label>
+                    <!-- Neutral border: Carbon Black at 30% opacity, never Inferno. French Blue on focus. -->
+                    <input
+                      aria-describedby="name-error"
+                      aria-required="true"
+                      class="w-full px-space-md py-3 bg-surface-container-lowest/60 text-carbon-black font-body-md text-body-md rounded-lg shadow-sm placeholder-carbon-black/40 focus:outline-none focus:ring-2 focus:ring-french-blue focus:bg-surface-container-lowest transition-all duration-150"
+                      id="contact-name"
+                      name="name"
+                      placeholder="Ej. Sofía Martínez"
+                      required=""
+                      style="border: 1px solid rgba(31, 29, 30, 0.3)"
+                      type="text"
+                    />
+                    <span
+                      class="hidden font-body-sm text-body-sm text-inferno font-semibold flex items-center gap-1 mt-0.5"
+                      id="name-error"
+                      role="alert"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >error</span
+                      >
+                      <span class=""
+                        >Por favor, ingresá tu nombre completo.</span
+                      >
+                    </span>
+                  </div>
+                  <!-- Field: Email -->
+                  <div class="flex flex-col gap-1.5">
+                    <label
+                      class="font-label-lg text-label-lg text-carbon-black font-semibold flex items-center justify-between"
+                      for="contact-email"
+                    >
+                      <span class=""
+                        >Correo Electrónico
+                        <span aria-hidden="true" class="text-inferno font-bold"
+                          >*</span
+                        ></span
+                      >
+                    </label>
+                    <input
+                      aria-describedby="email-error"
+                      aria-required="true"
+                      class="w-full px-space-md py-3 bg-surface-container-lowest/60 text-carbon-black font-body-md text-body-md rounded-lg shadow-sm placeholder-carbon-black/40 focus:outline-none focus:ring-2 focus:ring-french-blue focus:bg-surface-container-lowest transition-all duration-150"
+                      id="contact-email"
+                      name="email"
+                      placeholder="ejemplo@empresa.com"
+                      required=""
+                      style="border: 1px solid rgba(31, 29, 30, 0.3)"
+                      type="email"
+                    />
+                    <span
+                      class="hidden font-body-sm text-body-sm text-inferno font-semibold flex items-center gap-1 mt-0.5"
+                      id="email-error"
+                      role="alert"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >error</span
+                      >
+                      <span class=""
+                        >Ingresá un correo electrónico válido.</span
+                      >
+                    </span>
+                  </div>
+                  <!-- Field: Subject / Project Type -->
+                  <div class="flex flex-col gap-1.5">
+                    <label
+                      class="font-label-lg text-label-lg text-carbon-black font-semibold"
+                      for="contact-subject"
+                    >
+                      Tipo de Proyecto / Asunto
+                    </label>
+                    <select
+                      class="w-full px-space-md py-3 bg-surface-container-lowest/60 text-carbon-black font-body-md text-body-md rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-french-blue focus:bg-surface-container-lowest transition-all duration-150"
+                      id="contact-subject"
+                      name="subject"
+                      style="border: 1px solid rgba(31, 29, 30, 0.3)"
+                    >
+                      <option value="desarrollo-web">
+                        Desarrollo Web &amp; Frontend a Medida
+                      </option>
+                      <option value="design-system">
+                        Creación o Auditoría de Sistema de Diseño
+                      </option>
+                      <option value="fullstack-app">
+                        Aplicación Full-Stack (Next.js / Vue / Node / MongoDB)
+                      </option>
+                      <option value="consultoria">
+                        Consultoría de Accesibilidad (WCAG) &amp; Performance
+                      </option>
+                      <option value="otro">Otro requerimiento</option>
+                    </select>
+                  </div>
+                  <!-- Field: Message -->
+                  <div class="flex flex-col gap-1.5">
+                    <label
+                      class="font-label-lg text-label-lg text-carbon-black font-semibold flex items-center justify-between"
+                      for="contact-message"
+                    >
+                      <span class=""
+                        >Mensaje o Detalles del Proyecto
+                        <span aria-hidden="true" class="text-inferno font-bold"
+                          >*</span
+                        ></span
+                      >
+                    </label>
+                    <textarea
+                      aria-describedby="message-error"
+                      aria-required="true"
+                      class="w-full px-space-md py-3 bg-surface-container-lowest/60 text-carbon-black font-body-md text-body-md rounded-lg shadow-sm placeholder-carbon-black/40 focus:outline-none focus:ring-2 focus:ring-french-blue focus:bg-surface-container-lowest transition-all duration-150"
+                      id="contact-message"
+                      name="message"
+                      placeholder="Describí el alcance, objetivos y plazos aproximados..."
+                      required=""
+                      rows="4"
+                      style="border: 1px solid rgba(31, 29, 30, 0.3)"
+                    ></textarea>
+                    <span
+                      class="hidden font-body-sm text-body-sm text-inferno font-semibold flex items-center gap-1 mt-0.5"
+                      id="message-error"
+                      role="alert"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >error</span
+                      >
+                      <span class=""
+                        >Por favor, incluí un mensaje describiendo tu
+                        necesidad.</span
+                      >
+                    </span>
+                  </div>
+                  <!-- Submit Button & Feedback -->
+                  <div
+                    class="pt-space-xs flex flex-col sm:flex-row items-center gap-space-md"
+                  >
+                    <button
+                      class="w-full sm:w-auto inline-flex items-center justify-center font-label-lg text-label-lg px-space-xl py-3.5 rounded-lg bg-french-blue text-on-primary font-semibold hover:bg-primary transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 focus-visible:ring-offset-pale-oak shadow-sm"
+                      id="submit-btn"
+                      type="submit"
+                    >
+                      <span id="btn-text" class="">Enviar mensaje</span>
+                      <span
+                        class="hidden ml-2 material-symbols-outlined animate-spin text-[18px]"
+                        id="btn-spinner"
+                        >progress_activity</span
+                      >
+                    </button>
+                    <span
+                      class="font-body-sm text-body-sm text-carbon-black/60"
+                    >
+                      Campos marcados con
+                      <span class="text-inferno font-bold">*</span> son
+                      obligatorios.
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Accessible Form Validation & Micro-interaction Script -->
+        <script>
+          (function () {
+            const form = document.getElementById("contact-form");
+            const nameInput = document.getElementById("contact-name");
+            const emailInput = document.getElementById("contact-email");
+            const msgInput = document.getElementById("contact-message");
+
+            const nameError = document.getElementById("name-error");
+            const emailError = document.getElementById("email-error");
+            const msgError = document.getElementById("message-error");
+
+            const submitBtn = document.getElementById("submit-btn");
+            const btnText = document.getElementById("btn-text");
+            const btnSpinner = document.getElementById("btn-spinner");
+            const formAlert = document.getElementById("form-alert");
+
+            function isValidEmail(email) {
+              return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            function validateField(input, errorEl, condition) {
+              if (!condition) {
+                input.setAttribute("aria-invalid", "true");
+                errorEl.classList.remove("hidden");
+                return false;
+              } else {
+                input.setAttribute("aria-invalid", "false");
+                errorEl.classList.add("hidden");
+                return true;
+              }
+            }
+
+            nameInput.addEventListener("blur", function () {
+              validateField(
+                nameInput,
+                nameError,
+                nameInput.value.trim().length > 1,
+              );
+            });
+
+            emailInput.addEventListener("blur", function () {
+              validateField(
+                emailInput,
+                emailError,
+                isValidEmail(emailInput.value.trim()),
+              );
+            });
+
+            msgInput.addEventListener("blur", function () {
+              validateField(
+                msgInput,
+                msgError,
+                msgInput.value.trim().length > 5,
+              );
+            });
+
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              const isNameValid = validateField(
+                nameInput,
+                nameError,
+                nameInput.value.trim().length > 1,
+              );
+              const isEmailValid = validateField(
+                emailInput,
+                emailError,
+                isValidEmail(emailInput.value.trim()),
+              );
+              const isMsgValid = validateField(
+                msgInput,
+                msgError,
+                msgInput.value.trim().length > 5,
+              );
+
+              if (!isNameValid || !isEmailValid || !isMsgValid) {
+                formAlert.className =
+                  "p-space-sm rounded-lg font-body-sm text-body-sm bg-inferno/10 text-inferno border border-inferno/30";
+                formAlert.innerHTML =
+                  "<strong>Atenci&oacute;n:</strong> Por favor complet&aacute; todos los campos requeridos correctamente antes de continuar.";
+                formAlert.classList.remove("hidden");
+                return;
+              }
+
+              // Simulating submission state
+              formAlert.classList.add("hidden");
+              submitBtn.disabled = true;
+              btnText.textContent = "Enviando...";
+              btnSpinner.classList.remove("hidden");
+
+              setTimeout(function () {
+                submitBtn.disabled = false;
+                btnText.textContent = "Mensaje Enviado";
+                btnSpinner.classList.add("hidden");
+
+                formAlert.className =
+                  "p-space-sm rounded-lg font-body-sm text-body-sm bg-emerald-700/10 text-emerald-900 border border-emerald-700/30";
+                formAlert.innerHTML =
+                  "<strong>&iexcl;Gracias por contactarte!</strong> He recibido tu mensaje y te responder&eacute; a la brevedad.";
+                formAlert.classList.remove("hidden");
+
+                form.reset();
+                setTimeout(function () {
+                  btnText.textContent = "Enviar mensaje";
+                }, 3500);
+              }, 1200);
+            });
+          })();
+        </script>
+      </div>
+    </main>
+    <footer class="w-full bg-charcoal-brown text-pale-oak">
+      <div
+        class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-3xl"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop">
+          <div class="md:col-span-5 flex flex-col gap-space-md">
+            <div class="flex items-center gap-space-sm">
+              <div
+                class="w-8 h-8 rounded-lg bg-pale-oak text-charcoal-brown flex items-center justify-center font-headline-sm text-headline-sm font-bold"
+              >
+                EL
+              </div>
+              <span
+                class="font-headline-sm text-headline-sm text-text-inverse font-bold"
+                >Ezequiel Lavaca</span
+              >
+            </div>
+            <p class="font-body-md text-body-md text-pale-oak/80 max-w-sm">
+              Arquitectura de interfaz, diseño estratégico de sistemas de diseño
+              y desarrollo web de alto impacto visual y precisión técnica.
+            </p>
+            <div
+              class="flex items-center gap-space-sm text-pale-oak/90 font-label-sm text-label-sm"
+            >
+              <span
+                class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"
+              ></span
+              >Disponible para nuevos proyectos y consultoría
+            </div>
+          </div>
+          <div class="md:col-span-3 flex flex-col gap-space-sm">
+            <h3
+              class="font-label-lg text-label-lg text-text-inverse tracking-wide uppercase"
+            >
+              Navegación
+            </h3>
+            <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+              <li class="py-0.5">
+                <a
+                  class="text-pale-oak/80 hover:text-text-inverse transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded py-space-xs"
+                  href="#hero"
+                  >Inicio</a
+                >
+              </li>
+              <li class="py-0.5">
+                <a
+                  class="text-pale-oak/80 hover:text-text-inverse transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded py-space-xs"
+                  href="#servicios"
+                  >Servicios y Metodología</a
+                >
+              </li>
+              <li class="py-0.5">
+                <a
+                  class="text-pale-oak/80 hover:text-text-inverse transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded py-space-xs"
+                  href="#portfolio"
+                  >Casos de Estudio</a
+                >
+              </li>
+              <li class="py-0.5">
+                <a
+                  class="text-pale-oak/80 hover:text-text-inverse transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded py-space-xs"
+                  href="#contacto"
+                  >Contacto y Cotización</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="md:col-span-4 flex flex-col gap-space-sm">
+            <h3
+              class="font-label-lg text-label-lg text-text-inverse tracking-wide uppercase"
+            >
+              Contacto Profesional
+            </h3>
+            <div
+              class="flex flex-col gap-space-xs font-body-sm text-body-sm text-pale-oak/80"
+            >
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-pale-oak"
+                  >mail</span
+                >hola@ezequiellavaca.com
+              </p>
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-pale-oak"
+                  >location_on</span
+                >Buenos Aires, Argentina (GMT-3)
+              </p>
+              <p class="flex items-center gap-space-xs">
+                <span
+                  class="material-symbols-outlined text-[18px] text-pale-oak"
+                  >schedule</span
+                >Lunes a Viernes · 09:00 - 18:00
+              </p>
+            </div>
+            <div class="pt-space-xs">
+              <a
+                class="inline-flex items-center justify-center font-label-sm text-label-sm px-space-md py-2.5 rounded-lg border border-pale-oak/30 text-pale-oak hover:bg-pale-oak/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak"
+                href="#contacto"
+                >Agendar Llamada Breve</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-space-2xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-pale-oak/70 border-t border-pale-oak/15"
+        >
+          <p class="">© 2025 Ezequiel Lavaca. Todos los derechos reservados.</p>
+          <div class="flex items-center gap-space-lg">
+            <a
+              class="hover:text-text-inverse transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pale-oak rounded px-1"
+              href="#hero"
+              >Volver arriba</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
