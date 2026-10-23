@@ -1,3 +1,13 @@
+function estaVisibleCSS(elemento) {
+  const estilos = window.getComputedStyle(elemento);
+  return (
+    estilos.display !== 'none' &&
+    estilos.visibility !== 'hidden' &&
+    estilos.opacity !== '0' &&
+    elemento.offsetWidth > 0 &&
+    elemento.offsetHeight > 0
+  );
+}
 const changeAttr = (elem) => {
   (elem.getAttribute('aria-expanded') === 'true') ? elem.setAttribute('aria-expanded', 'false') : elem.setAttribute('aria-expanded', 'true')
 }
@@ -6,7 +16,9 @@ const handleAccessibility = (e) => {
   changeAttr(etarget);
 }
 const handleMenu = (menuTrigger) => {
-  changeAttr(menuTrigger);
+  if(estaVisibleCSS(menuTrigger)) {
+    changeAttr(menuTrigger);
+  }
 } 
 const mainMenu = (menuTrigger) => {
    menuTrigger = document.querySelector('#menutrigger');
@@ -14,7 +26,7 @@ const mainMenu = (menuTrigger) => {
     menuTrigger.addEventListener('click', handleAccessibility, true)
   }
 }
-const navLinkbehavior = (menuTrigger, links) => {  
+const navLinkbehavior = (menuTrigger, links) => { 
   if(!menuTrigger) return;
   links.forEach((link) =>{
     link.addEventListener('click', () => handleMenu(menuTrigger), true)
