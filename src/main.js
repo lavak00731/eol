@@ -56,11 +56,10 @@ const handleNavChange = (links) => {
     target.setAttribute('aria-current', 'page');
   });
 }
-
 (()=>{
   const menuTrigger = document.querySelector('#menutrigger');
   const links = document.querySelectorAll('#nav a');
   mainMenu(menuTrigger);
   navLinkbehavior(menuTrigger, links);
-  handleNavChange(links)
+  handleNavChange(links);
 })()
