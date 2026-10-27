@@ -17,8 +17,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ message: "Mensaje enviado." });
   } catch (error) {
     console.error("No se pudo enviar el mensaje de contacto:", error);
-    return res.status(500).json({
-      error: "No se pudo enviar el mensaje. Intentá nuevamente más tarde.",
-    });
+    const detail = error instanceof Error ? error.message : "Error desconocido.";
+    return res.status(500).json({ error: detail });
   }
 }
