@@ -62,4 +62,68 @@ const handleNavChange = (links) => {
   mainMenu(menuTrigger);
   navLinkbehavior(menuTrigger, links);
   handleNavChange(links);
-})()
+})();
+
+const contactForm = document.querySelector('#contact-form');
+
+if (contactForm) {
+  const alert = document.querySelector('#form-alert');
+  const submitButton = document.querySelector('#submit-btn');
+  const buttonText = document.querySelector('#btn-text');
+  const spinner = document.querySelector('#btn-spinner');
+
+  const showAlert = (message, isError = false) => {
+    alert.textContent = message;
+    alert.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-900', 'bg-red-100', 'text-red-900');
+    alert.classList.add(isError ? 'bg-red-100' : 'bg-emerald-100', isError ? 'text-red-900' : 'text-emerald-900');
+  };
+
+  const setFieldError = (fieldName, hasError) => {
+    const field = contactForm.elements[fieldName];
+    const error = document.querySelector(`#${fieldName}-error`);
+    if (!field || !error) return;
+    error.classList.toggle('hidden', !hasError);
+    field.setAttribute('aria-invalid', String(hasError));
+  };
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(contactForm));
+    const invalidName = typeof data.name !== 'string' || data.name.trim().length < 2;
+    const invalidEmail = typeof data.email !== 'string' || !data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    const invalidMessage = typeof data.message !== 'string' || data.message.trim().length < 6;
+
+    setFieldError('name', invalidName);
+    setFieldError('email', invalidEmail);
+    setFieldError('message', invalidMessage);
+
+    if (invalidName || invalidEmail || invalidMessage) {
+      showAlert('Revisá los campos marcados antes de enviar.', true);
+      return;
+    }
+
+    submitButton.disabled = true;
+    buttonText.textContent = 'Enviando…';
+    spinner.classList.remove('hidden');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) throw new Error(result.error || 'No se pudo enviar el mensaje.');
+
+      showAlert(result.message || 'Mensaje enviado correctamente.');
+      contactForm.reset();
+    } catch (error) {
+      showAlert(error.message, true);
+    } finally {
+      submitButton.disabled = false;
+      buttonText.textContent = 'Enviar mensaje';
+      spinner.classList.add('hidden');
+    }
+  });
+}
