@@ -88,7 +88,10 @@ if (contactForm) {
 
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const data = Object.fromEntries(new FormData(contactForm));
+    const data = {
+      ...Object.fromEntries(new FormData(contactForm)),
+      locale: document.documentElement.lang === 'en' ? 'en' : 'es',
+    };
     const invalidName = typeof data.name !== 'string' || data.name.trim().length < 2;
     const invalidEmail = typeof data.email !== 'string' || !data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
     const invalidMessage = typeof data.message !== 'string' || data.message.trim().length < 6;
@@ -98,12 +101,14 @@ if (contactForm) {
     setFieldError('message', invalidMessage);
 
     if (invalidName || invalidEmail || invalidMessage) {
-      showAlert('Revisá los campos marcados antes de enviar.', true);
+      showAlert(document.documentElement.lang === 'en'
+        ? 'Please review the marked fields before sending.'
+        : 'Revisá los campos marcados antes de enviar.', true);
       return;
     }
 
     submitButton.disabled = true;
-    buttonText.textContent = 'Enviando…';
+    buttonText.textContent = document.documentElement.lang === 'en' ? 'Sending…' : 'Enviando…';
     spinner.classList.remove('hidden');
 
     try {
@@ -114,15 +119,21 @@ if (contactForm) {
       });
       const result = await response.json().catch(() => ({}));
 
-      if (!response.ok) throw new Error(result.error || 'No se pudo enviar el mensaje.');
+      if (!response.ok) {
+        throw new Error(result.error || (document.documentElement.lang === 'en'
+          ? 'The message could not be sent.'
+          : 'No se pudo enviar el mensaje.'));
+      }
 
-      showAlert(result.message || 'Mensaje enviado correctamente.');
+      showAlert(result.message || (document.documentElement.lang === 'en'
+        ? 'Message sent successfully.'
+        : 'Mensaje enviado correctamente.'));
       contactForm.reset();
     } catch (error) {
       showAlert(error.message, true);
     } finally {
       submitButton.disabled = false;
-      buttonText.textContent = 'Enviar mensaje';
+      buttonText.textContent = document.documentElement.lang === 'en' ? 'Send message' : 'Enviar mensaje';
       spinner.classList.add('hidden');
     }
   });
